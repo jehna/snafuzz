@@ -12,9 +12,7 @@ export const getTagged = () => {
   return currTagged;
 };
 
-export const tag = <T extends Function>(fn: T): T => {
-  return ((...args: any[]) => {
-    setTagged(args);
-    return fn(...args);
-  }) as any;
+export const tag = <T>(value: T): T => {
+  setTagged(value);
+  return value;
 };
