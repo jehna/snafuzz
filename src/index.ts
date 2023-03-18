@@ -1,13 +1,9 @@
-import { string } from "./generators";
-import { rnd } from "./ineternal-state";
+import { string, urlparams } from "./generators";
+import { tag } from "./tag";
 import { expect, test } from "./test";
 
-test("rnd should return value between 0 and 1", async () => {
-  const value = rnd();
-  expect(value > 0 && value < 1);
-});
-
-test("string should return a string with length", async () => {
-  const value = string();
-  expect(value.length > 0);
+test("should find a SQL injection", async () => {
+  const params = urlparams({ q: string() });
+  const result = await tag(fetch)("http://localhost:3000/?" + params);
+  expect(result.ok);
 });

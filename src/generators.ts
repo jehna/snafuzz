@@ -22,7 +22,8 @@ const numberBetween = (min: number, max: number) => {
 };
 
 export const char = () => {
-  const charCode = numberBetween(0, 65535 + 1);
+  const maxNum = weighted([1, () => 255], [1, () => 65535]);
+  const charCode = numberBetween(0, maxNum + 1);
   return String.fromCharCode(charCode);
 };
 
@@ -35,5 +36,5 @@ export const string = () => {
   return result;
 };
 
-const urlparams = (params: Record<string, string>) =>
+export const urlparams = (params: Record<string, string>) =>
   new URLSearchParams(params);

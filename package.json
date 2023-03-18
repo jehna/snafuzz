@@ -10,6 +10,7 @@
     "typescript": "^5.0.2"
   },
   "scripts": {
-    "start": "ts-node src/index.ts"
+    "start": "ts-node src/index.ts",
+    "dummy": "cd vulnerable-server && yarn start"
   }
 }
