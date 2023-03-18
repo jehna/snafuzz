@@ -17,7 +17,7 @@ const numberBetween = (min: number, max: number) => {
   return weighted(
     [1, () => min],
     [1, () => max],
-    [100, () => min + (max - min) * rnd()]
+    [1000, () => min + (max - min) * rnd()]
   );
 };
 
