@@ -52,9 +52,10 @@ export const urlparam = () => {
 };
 
 export const urlparams = (params: Record<string, string>) => {
-  const extraKeys = weighted(
-    [100, () => ({})],
-    [1, () => Object.fromEntries(arrayOf(() => [urlparam(), string()]))]
-  );
-  return new URLSearchParams({ ...params, ...extraKeys });
+  const random = () =>
+    arrayOf(() => [urlparam(), string()] as [string, string]);
+  const empty = () => [];
+  const duplicate = () => Object.entries(params);
+  const extraKeys = weighted([100, empty], [1, random], [1, duplicate]);
+  return new URLSearchParams([...Object.entries(params), ...extraKeys]);
 };
