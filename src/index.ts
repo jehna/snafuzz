@@ -1,4 +1,5 @@
-import { string, urlparams } from "./generators";
+import { string } from "./generators/string";
+import { urlparams } from "./generators/url";
 import { tag } from "./tag";
 import { expect, test } from "./test";
 
