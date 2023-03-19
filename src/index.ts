@@ -1,3 +1,4 @@
+import { fetch } from "./generators/fetch";
 import { string } from "./generators/string";
 import { urlparams } from "./generators/url";
 import { tag } from "./tag";
