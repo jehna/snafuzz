@@ -1,7 +1,7 @@
 import { oneFrom } from "../local";
-import { arrayOf } from "./array";
+import { arrayOf } from "./internal/array";
 import { weighted } from "./probabilities";
-import { string } from "./string";
+import { string } from "./internal/string";
 
 const PARAMS_LIST = "SecLists/Discovery/Web-Content/burp-parameter-names.txt";
 export const urlparam = () => {

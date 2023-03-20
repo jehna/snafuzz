@@ -1,9 +1,9 @@
 import type { fetch as fetchTypeInterface, RequestInit } from "undici";
 import { oneFrom } from "../local";
 import { tag } from "../tag";
-import { arrayOf } from "./array";
+import { arrayOf } from "./internal/array";
 import { weighted } from "./probabilities";
-import { alphanumeric, string } from "./string";
+import { alphanumeric, string } from "./internal/string";
 
 type Fetch = typeof fetchTypeInterface;
 const origFetch: Fetch = (globalThis as any).fetch;

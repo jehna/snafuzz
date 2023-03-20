@@ -1,4 +1,9 @@
-import { resetSeed, seed } from "./ineternal-state";
+import {
+  resetProperties,
+  setGlobalState,
+  shrinkGlobalState,
+} from "./generators/internal/state/properties";
+import { resetSeed, seed, setSeed } from "./ineternal-state";
 import { getTagged, resetTagged } from "./tag";
 
 const TIMEOUT_MS = 1_000;
@@ -24,15 +29,34 @@ export const runTests = async () => {
       while (Date.now() - startTime < TIMEOUT_MS || i++ < MIN_TESTS) {
         resetSeed();
         resetTagged();
+        resetProperties();
         await testFn();
       }
       console.log(`✅ ${name}`);
     } catch (e) {
-      console.error(
-        `❌ ${name} (tagged: ${JSON.stringify(getTagged())}, seed: ${seed()})`
-      );
+      console.error(`❌ ${name}`);
+      console.log(`   seed: ${seed()}`);
+      console.log(`   initial: ${JSON.stringify(getTagged())}`);
+      await shrink(name, testFn);
     }
   }
+};
+
+const shrink = async (
+  name: string,
+  testFn: () => Promise<void>
+): Promise<void> => {
+  const startSeed = seed();
+  for (const globalState of (setSeed(startSeed), shrinkGlobalState())) {
+    setGlobalState(globalState);
+    try {
+      resetTagged();
+      await testFn();
+    } catch (e) {
+      return shrink(name, testFn);
+    }
+  }
+  console.error(`   shrunk: ${JSON.stringify(getTagged())}`);
 };
 
 Promise.resolve().then(runTests);
