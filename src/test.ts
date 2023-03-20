@@ -7,7 +7,7 @@ import { resetSeed, seed, setSeed } from "./ineternal-state";
 import { getTagged, resetTagged } from "./tag";
 
 const TIMEOUT_MS = 1_000;
-const MIN_TESTS = 100;
+const MIN_TESTS = 10000;
 
 let tests: [name: string, testFn: () => Promise<void>][] = [];
 
@@ -46,6 +46,7 @@ const shrink = async (
   name: string,
   testFn: () => Promise<void>
 ): Promise<void> => {
+  const lastSuccessfulTagged = getTagged();
   const startSeed = seed();
   for (const globalState of (setSeed(startSeed), shrinkGlobalState())) {
     setGlobalState(globalState);
@@ -56,7 +57,7 @@ const shrink = async (
       return shrink(name, testFn);
     }
   }
-  console.error(`   shrunk: ${JSON.stringify(getTagged())}`);
+  console.error(`   shrunk: ${JSON.stringify(lastSuccessfulTagged)}`);
 };
 
 Promise.resolve().then(runTests);
