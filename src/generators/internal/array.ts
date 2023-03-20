@@ -17,6 +17,10 @@ export const array = <T>(generator: Generator<T>) =>
       if (value.length === 0) {
         return;
       }
+
+      // First shrink all away
+      yield [];
+
       //  Shrink on size first by keeping n last/first items
       let removedSize = Math.floor(value.length / 2);
       while (removedSize > 0) {
