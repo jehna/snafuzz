@@ -5,7 +5,7 @@ import { intBetween } from "../number";
 export const array = <T>(generator: Generator<T>) =>
   Generator(
     (rnd) => {
-      const length = integer(0, 10).generate(rnd);
+      const length = integer(0, 50).generate(rnd);
       const result: T[] = [];
       for (let i = 0; i < length; i++) {
         result.push(generator.generate(rnd));
