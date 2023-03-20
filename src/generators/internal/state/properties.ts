@@ -1,5 +1,5 @@
-import { rnd } from "../../../ineternal-state";
-import { tag } from "../../../tag";
+import { rnd } from "./random";
+import { tag } from "./tag";
 import { Generator } from "../generator";
 import { tuple } from "../tuple";
 

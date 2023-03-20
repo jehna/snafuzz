@@ -1,13 +1,5 @@
-import { rnd } from "../ineternal-state";
-import { weighted } from "./probabilities";
+import { integer as _integer } from "./internal/integer";
+import { registerProperty } from "./internal/state/properties";
 
-export const numberBetween = (min: number, max: number) => {
-  return weighted(
-    [1, () => min],
-    [1, () => max - 1],
-    [1000, () => min + (max - min) * rnd()]
-  );
-};
-
-export const intBetween = (min: number, max: number) =>
-  Math.floor(numberBetween(min, max));
+export const integer = (min: number, max: number) =>
+  registerProperty(() => _integer(min, max));

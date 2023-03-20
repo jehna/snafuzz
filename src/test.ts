@@ -3,8 +3,8 @@ import {
   setGlobalState,
   shrinkGlobalState,
 } from "./generators/internal/state/properties";
-import { resetSeed, seed, setSeed } from "./ineternal-state";
-import { getTagged, resetTagged } from "./tag";
+import { resetSeed, seed, setSeed } from "./generators/internal/state/random";
+import { getTagged, resetTagged } from "./generators/internal/state/tag";
 
 const TIMEOUT_MS = 1_000;
 const MIN_TESTS = 10000;

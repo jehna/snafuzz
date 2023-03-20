@@ -1,6 +1,5 @@
 import { Generator } from "./generator";
 import { integer } from "./integer";
-import { intBetween } from "../number";
 
 export const array = <T>(generator: Generator<T>) =>
   Generator(

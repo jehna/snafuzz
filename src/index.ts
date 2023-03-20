@@ -1,7 +1,7 @@
-import { fetch } from "./generators/fetch";
+import { fetch } from "./fetch";
 import { string } from "./generators/string";
 import { urlparams } from "./generators/url";
-import { tag } from "./tag";
+import { tag } from "./generators/internal/state/tag";
 import { expect, test } from "./test";
 
 test("substring part of concat (should fail unless REALLY lucky)", async () => {

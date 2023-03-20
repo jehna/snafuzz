@@ -1,4 +1,4 @@
-import { rnd } from "../ineternal-state";
+import { rnd } from "./state/random";
 
 export const weighted = <T>(...weights: [weigth: number, value: () => T][]) => {
   const totalWeight = weights.reduce((acc, [weight]) => acc + weight, 0);
