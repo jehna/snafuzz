@@ -1,5 +1,14 @@
 import { Generator } from "./generator";
 
+type ExtractTuple<T extends Generator<any>[]> = T extends [
+  Generator<infer U>,
+  ...infer Rest
+]
+  ? Rest extends Generator<any>[]
+    ? [U, ...ExtractTuple<Rest>]
+    : never
+  : [];
+
 export const tuple = <T extends Generator<any>[]>(...itemGenerators: T) =>
   Generator(
     (rnd) => itemGenerators.map((generator) => generator.generate(rnd)),
@@ -12,4 +21,4 @@ export const tuple = <T extends Generator<any>[]>(...itemGenerators: T) =>
         }
       }
     }
-  );
+  ) as Generator<ExtractTuple<T>>;

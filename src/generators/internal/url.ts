@@ -1,18 +1,17 @@
-import { oneFrom } from "../../local";
-import { arrayOf } from "./array";
-import { weighted } from "../probabilities";
-import { string } from "../string";
+import { array } from "./array";
+import { map } from "./generator";
+import { oneFrom } from "./local";
+import { letter, string } from "./string";
+import { tuple } from "./tuple";
 
 const PARAMS_LIST = "SecLists/Discovery/Web-Content/burp-parameter-names.txt";
-export const urlparam = () => {
-  return weighted([100, () => oneFrom(PARAMS_LIST)], [1, string]);
-};
 
-export const urlparams = (params: Record<string, string>) => {
-  /*const random = () =>
-    arrayOf(() => [urlparam(), string()] as [string, string]);
-  const empty = () => [];
-  const duplicate = () => Object.entries(params);
-  const extraKeys = weighted([100, empty], [1, random], [1, duplicate]);*/
-  return new URLSearchParams([...Object.entries(params)]);
-};
+const urlparam = () => oneFrom(PARAMS_LIST);
+
+export const urlparams = (params: Record<string, string>) =>
+  map(
+    array(tuple(urlparam(), string(letter))),
+    (extraParams) =>
+      new URLSearchParams([...extraParams, ...Object.entries(params)]),
+    (v) => [...v.entries()].filter(([k]) => !Object.keys(params).includes(k))
+  );

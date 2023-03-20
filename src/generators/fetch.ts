@@ -1,4 +1,4 @@
-import type { fetch as fetchTypeInterface, RequestInit } from "undici";
+import type { fetch as fetchTypeInterface } from "undici";
 
 type Fetch = typeof fetchTypeInterface;
 const origFetch: Fetch = (globalThis as any).fetch;

@@ -27,7 +27,7 @@ export const registerProperty = <T>(generator: () => Generator<T>): T => {
 let globalState: any[] | undefined = undefined;
 
 export const shrinkGlobalState = () => {
-  const globalStateGenerator = tuple(...topLevelGenerators);
+  const globalStateGenerator: Generator<any[]> = tuple(...topLevelGenerators);
   if (!globalState) globalState = globalStateGenerator.generate(rnd);
   return globalStateGenerator.shrink(globalState);
 };
