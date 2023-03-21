@@ -53,6 +53,8 @@ SnafuSeeker is meant to make asynchronous property based fuzzing easy:
   to describe test cases (properties)
 * SnafuSeeker is asynchronous, so you can use it to test your web applications
   or other asynchronous code
+* Need throttling? Just use `await sleep(1000)` in your test case, it's "just
+  code"
 
 ## Contributing
 
