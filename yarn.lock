@@ -52,10 +52,10 @@
   resolved "https://registry.yarnpkg.com/@types/mersenne-twister/-/mersenne-twister-1.1.3.tgz#de903ccabe1773baef4de70333461eda43dd56f5"
   integrity sha512-E2Y0Q+ScvIrvlK9X503cV7jFFwQX226DB15Wg+ULKjyIJ+878Q6lazznJFxrhF65v8xdL0neNGEPAYLIIym3nA==
 
-"@types/node@^20.4.0":
-  version "20.4.0"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.4.0.tgz#01d637d1891e419bc85763b46f42809cd2d5addb"
-  integrity sha512-jfT7iTf/4kOQ9S7CHV9BIyRaQqHu67mOjsIQBC3BKZvzvUB6zLxEwJ6sBE3ozcvP8kF6Uk5PXN0Q+c0dfhGX0g==
+"@types/node@^20.4.1":
+  version "20.4.1"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.4.1.tgz#a6033a8718653c50ac4962977e14d0f984d9527d"
+  integrity sha512-JIzsAvJeA/5iY6Y/OxZbv1lUcc8dNSE77lb2gnBH+/PJ3lFR1Ccvgwl5JWnHAkNHcRsT0TbpVOsiMKZ1F/yyJg==
 
 acorn-walk@^8.1.1:
   version "8.2.0"
