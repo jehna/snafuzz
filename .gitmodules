@@ -1,3 +1,0 @@
-[submodule "SecLists"]
-	path = SecLists
-	url = git@github.com:danielmiessler/SecLists.git

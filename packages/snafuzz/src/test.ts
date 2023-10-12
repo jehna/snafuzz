@@ -22,6 +22,7 @@ export const expect = (turthyTest: boolean) => {
 };
 
 export const runTests = async () => {
+  let didFail = false;
   for (const [name, testFn] of tests) {
     try {
       let startTime = Date.now();
@@ -32,13 +33,22 @@ export const runTests = async () => {
         resetProperties();
         await testFn();
       }
-      console.log(`✅ ${name}`);
+      const elapsedTime = Date.now() - startTime;
+      const iterationsPerSecond = Math.round((i / elapsedTime) * 1000);
+      console.log(`✅ ${name} (${iterationsPerSecond} iter/s)`);
     } catch (e) {
       console.error(`❌ ${name}`);
       console.log(`   seed: ${seed()}`);
       console.log(`   initial: ${JSON.stringify(getTagged())}`);
       await shrink(name, testFn);
+      didFail = true;
     }
+  }
+
+  if (didFail) {
+    process.exit(1);
+  } else {
+    process.exit(0);
   }
 };
 

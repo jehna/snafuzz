@@ -1,11 +1,9 @@
-# SnafuSeeker
+# Snafuzz
 > An asynchronous, property based fuzzing tool
 
-SnafuSeeker is a tool that you can use to fuzz your code or project with random
-data and wordlists (à la [SecLists][seclists]). When a test fails, SnafuSeeker
-will automatically search for the minimal input that causes the test to fail.
-
-[seclists]: https://github.com/danielmiessler/SecLists
+Snafuzz is a tool that you can use to fuzz your code or project with random
+data. When a test fails, Snafuzz will automatically search for the minimal
+input that causes the test to fail.
 
 A simple example:
 
@@ -29,30 +27,19 @@ Clone the project and install the dependencies:
 
 ```shell
 yarn # installs node dependencies
-git submodule update --init --recursive # fetches SecLists
 ```
 
-While you can use the tool without SecLists, there are some built in helper
-functions that utilize lists from SecLists.
-
-When you have everything installed, you can run the example test suite:
-
-```shell
-yarn dummy & # starts the dummy server
-yarn test # runs the test suite
-```
-
-Dummy server is just for illustrative purposes. You should implement your own
-tests to `src/index.ts`.
+When you have everything installed, you can run the example test suites from
+under `packages/example-*`.
 
 ## Features
 
-SnafuSeeker is meant to make asynchronous property based fuzzing easy:
+Snafuzz is meant to make asynchronous property based fuzzing easy:
 * It tries to get out of your way as much as possible
-* React has made it OK to use hooks, and SnafuSeeker uses hook-like global API
-  to describe test cases (properties)
-* SnafuSeeker is asynchronous, so you can use it to test your web applications
-  or other asynchronous code
+* React has made it OK to use hooks, and Snafuzz uses hook-like global API to
+  describe test cases (properties)
+* Snafuzz is asynchronous, so you can use it to test your web applications or
+  other asynchronous code
 * Need throttling? Just use `await sleep(1000)` in your test case, it's "just
   code"
 
