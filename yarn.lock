@@ -52,10 +52,10 @@
   resolved "https://registry.yarnpkg.com/@tsconfig/node16/-/node16-1.0.3.tgz#472eaab5f15c1ffdd7f8628bd4c4f753995ec79e"
   integrity sha512-yOlFc+7UtL/89t2ZhjPvvB/DeAr3r+Dq58IgzsFkOAvVC6NMJXmCGjbptdXdR9qsX7pKcTL+s87FtYREi2dEEQ==
 
-"@types/mersenne-twister@^1.1.5":
-  version "1.1.5"
-  resolved "https://registry.yarnpkg.com/@types/mersenne-twister/-/mersenne-twister-1.1.5.tgz#8b24b11a5ac8202ab8a16e5c7280fbd9ee468bed"
-  integrity sha512-Tm5mA9RESFb2hoSDGGSyWaKIrSHAAPxP/RPwnNibPhwEducrnmtRS2pHLB62XUDMbDxuJ6o6uBHGSKtzDimmqw==
+"@types/mersenne-twister@^1.1.6":
+  version "1.1.6"
+  resolved "https://registry.yarnpkg.com/@types/mersenne-twister/-/mersenne-twister-1.1.6.tgz#86da5c815ca01ebdc518cd76eb7e818c77ebbce8"
+  integrity sha512-gZ9TPefpiJBncGYadhBNAddgXYIYmNew2ICElprriy5ZLRIG9hr/oWij+WDD88Vls8Vx9ZZM8NyoH3NpOxEuUw==
 
 "@types/node@^20.8.6":
   version "20.8.6"

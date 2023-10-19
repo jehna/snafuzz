@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "@types/mersenne-twister": "^1.1.5",
+    "@types/mersenne-twister": "^1.1.6",
     "@types/node": "^20.8.6",
     "mersenne-twister": "^1.1.0",
     "ts-node": "^10.9.1",
