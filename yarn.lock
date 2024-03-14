@@ -52,10 +52,10 @@
   resolved "https://registry.yarnpkg.com/@types/mersenne-twister/-/mersenne-twister-1.1.7.tgz#c6b8380b6e7f9c1ccc146baf3408613be5b2e32b"
   integrity sha512-WC4CfMTR59ov9HxLxLg5bjgbX/MljzC9yEp+x8LJze9Y58hTVz6fuNdojxzE8shzQDWoe4id6rhgi4Sfk1G4Wg==
 
-"@types/node@^20.11.26":
-  version "20.11.26"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.11.26.tgz#3fbda536e51d5c79281e1d9657dcb0131baabd2d"
-  integrity sha512-YwOMmyhNnAWijOBQweOJnQPl068Oqd4K3OFbTc6AHJwzweUwwWG3GIFY74OKks2PJUDkQPeddOQES9mLn1CTEQ==
+"@types/node@^20.11.27":
+  version "20.11.27"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.11.27.tgz#debe5cfc8a507dd60fe2a3b4875b1604f215c2ac"
+  integrity sha512-qyUZfMnCg1KEz57r7pzFtSGt49f6RPkPBis3Vo4PbS7roQEDn22hiHzl/Lo1q4i4hDEgBJmBF/NTNg2XR0HbFg==
   dependencies:
     undici-types "~5.26.4"
 
