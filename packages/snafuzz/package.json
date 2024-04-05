@@ -8,7 +8,7 @@
     "@types/node": "^20.12.4",
     "mersenne-twister": "^1.1.0",
     "ts-node": "^10.9.2",
-    "typescript": "^5.4.3",
+    "typescript": "^5.4.4",
     "undici": "^6.11.1"
   },
   "scripts": {
