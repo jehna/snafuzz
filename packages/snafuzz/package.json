@@ -9,7 +9,7 @@
     "mersenne-twister": "^1.1.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.5",
-    "undici": "^6.16.1"
+    "undici": "^6.17.0"
   },
   "scripts": {
     "start": "ts-node src/index.ts",
